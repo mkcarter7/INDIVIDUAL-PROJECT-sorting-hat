@@ -1,0 +1,48 @@
+body {
+  background-color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: auto;
+}
+
+.card {
+  background-color: black;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: auto;
+}
+
+.container {
+  background-color: black;
+}
+
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  
+}
+
+.model content {
+  width: 500;
+  height: 300;
+  background-color: antiquewhite;
+  border-radius: 4px;
+  text-align: center;
+  padding: 50px;
+  position: relative;
+ 
+
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  transform: rotate(45deg);
+
+}
