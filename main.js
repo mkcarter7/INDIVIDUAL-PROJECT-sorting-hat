@@ -17,13 +17,35 @@ const students = [{
   house: 'Ravenclaw',
 }
 ]
-  
+const filter = (array, house) => {
+  const houseArray = [];
+
+  array.forEach((item) => {
+    if (item.favoriteHouse === house) {
+      houseArray.push(item);
+    }
+  });
+
+  return houseArray;
+}
+
 
 // MAIN PAGE BUTTON
-document.querySelector('bnt1');
+const bnt1 = document.querySelector('#bnt1');
 bnt1.addEventListener('click', function(){
-document.querySelector('.bg-modal').style.display = 'flex';
-})
+console.log('button-click')})
+const griffindorBtn =document.querySelector('#griffindor');
+griffindorBtn.addEventListener('click', function(){
+console.log('button-click')})
+const hufflepuffBtn =document.querySelector('#hufflepuff');
+hufflepuffBtn.addEventListener('click', function(){
+console.log('button-click')})
+const ravenclawBtn =document.querySelector('#ravenclaw');
+ravenclawBtn.addEventListener('click', function(){
+console.log('button-click')})
+const slytherinBtn =document.querySelector('#slytherin');
+slytherinBtn.addEventListener('click', function(){
+console.log('button-click')})
 
 
 
