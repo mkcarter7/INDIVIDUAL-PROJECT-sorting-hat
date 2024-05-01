@@ -1,27 +1,27 @@
 // STUDENT CARD ARRAY
 const students = [{
   id: 1,
-  student: 'Hermone',
+  name: 'Hermone',
   house: 'Slytherin',
 },{
   id: 2,
-  student: 'Hermone',
+  name: 'Hermone',
   house: 'Slytherin',
 },{
   id: 3,
-  student: 'Hermone',
+  name: 'Hermone',
   house: 'Slytherin',
 },{
   id: 4,
-  student: 'Hermone',
+  name: 'Hermone',
   house: 'Ravenclaw',
 }
 ]
   
 
 // MAIN PAGE BUTTON
-document.getElementById('bnt1');
-bnt1.addEventListener("click", function(){
+document.querySelector('bnt1');
+bnt1.addEventListener('click', function(){
 document.querySelector('.bg-modal').style.display = 'flex';
 })
 
@@ -43,9 +43,28 @@ cardText.classList.add('card-text');
 cardText.textContent = `house: ${student.house}`;
 }
 
+const renderToDom = (divId, htmlToRender) => {
+  const selectedDiv = document.querySelector(divId);
+  selectedDiv.innerHTML = htmlToRender;
+};
+
 const cardsOnDom = (students) => {
   let domString = "";
   for (const student of students) {
-    domString += `${student.house}`;
+    domString += `<div class="card" style="width: 18rem;">
+       <div class="card-body">
+      <p class="card-text">${student.name}</p>
+      <p class="card-text">${student.house}</p>
+      <button class="btn btn-danger" id="delete--${student.id}">Delete</button>
+    </div>
+  </div>`;
       }
+      renderToDom("#army", domString);
     };
+    const startApp = () => {
+      cardsOnDom(students);
+      // events(); // ALWAYS LAST
+    }
+    
+    
+    startApp();
