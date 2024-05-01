@@ -24,8 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   display: none;
-  
-}
+  }
 
 .model content {
   width: 500;
@@ -35,14 +34,11 @@ body {
   text-align: center;
   padding: 50px;
   position: relative;
- 
-
-}
+ }
 
 .close {
   position: absolute;
   top: 0;
   right: 15px;
   transform: rotate(45deg);
-
 }
