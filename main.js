@@ -30,7 +30,14 @@ const filter = (array, house) => {
 }
 
 
-// MAIN PAGE BUTTON
+
+// TODO delete students-remove from array and add to voldys army
+// TODO card with students name and random house assignment after sort
+// TODO get buttons to work
+// TODO make forms and cards only appear when needed per directions
+
+
+// BUTTONS
 const bnt1 = document.querySelector('#bnt1');
 bnt1.addEventListener('click', function(){
 console.log('button-click')})
@@ -49,7 +56,7 @@ console.log('button-click')})
 
 
 
-// HOUSE
+// FUNCTION TO ASSIGN HOUSE TO STUDENTS
 function assignHouse() {
   const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin'];
   return houses[Math.floor(Math.random() * houses.length)];
@@ -85,8 +92,25 @@ const cardsOnDom = (students) => {
     };
     const startApp = () => {
       cardsOnDom(students);
-      // events(); // ALWAYS LAST
-    }
+          }
     
     
     startApp();
+
+    // DELETE STUDENT
+// 1. Target the app div
+const app = document.querySelector("#app");
+app.addEventListener('click', (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
+    const index = team.findIndex(e => e.id === Number(id));
+    team.splice(index, 1);
+    cardsOnDom(team);
+  }
+});
+const startApp = () => {
+  cardsOnDom(team);
+ }
+
+
+startApp();
