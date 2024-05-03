@@ -1,19 +1,19 @@
 // STUDENT CARD ARRAY
 const students = [{
   id: 1,
-  name: 'Hermone',
+  name: 'Hermione',
   house: 'Slytherin',
 },{
   id: 2,
-  name: 'Hermone',
+  name: 'Hermione',
   house: 'Slytherin',
 },{
   id: 3,
-  name: 'Hermone',
+  name: 'Hermione',
   house: 'Slytherin',
 },{
   id: 4,
-  name: 'Hermone',
+  name: 'Hermione',
   house: 'Ravenclaw',
 }
 ]
@@ -29,51 +29,9 @@ const filter = (array, house) => {
   return houseArray;
 }
 
-
-
-// TODO delete students-remove from array and add to voldys army
-// TODO card with students name and random house assignment after sort
-// TODO get buttons to work
-// TODO make forms and cards only appear when needed per directions
-
-
-// BUTTONS
-const bnt1 = document.querySelector('#bnt1');
-bnt1.addEventListener('click', function(){
-console.log('button-click')})
-const griffindorBtn =document.querySelector('#griffindor');
-griffindorBtn.addEventListener('click', function(){
-console.log('button-click')})
-const hufflepuffBtn =document.querySelector('#hufflepuff');
-hufflepuffBtn.addEventListener('click', function(){
-console.log('button-click')})
-const ravenclawBtn =document.querySelector('#ravenclaw');
-ravenclawBtn.addEventListener('click', function(){
-console.log('button-click')})
-const slytherinBtn =document.querySelector('#slytherin');
-slytherinBtn.addEventListener('click', function(){
-console.log('button-click')})
-
-
-
-// FUNCTION TO ASSIGN HOUSE TO STUDENTS
-function assignHouse() {
-  const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin'];
-  return houses[Math.floor(Math.random() * houses.length)];
-}
-
-//  ADD STUDENT CARD
-
-function createStudentCard(student) {
-  const card = document.createElement('div');
-  card.classList.add('form', 'mb-3');
-const cardText = document.createElement('p');
-cardText.classList.add('card-text');
-cardText.textContent = `house: ${student.house}`;
-}
-
-const renderToDom = (divId, htmlToRender) => {
-  const selectedDiv = document.querySelector(divId);
+// CARDS ON DOM
+const renderToDom = (filter, htmlToRender) => {
+  const selectedDiv = document.querySelector(filter);
   selectedDiv.innerHTML = htmlToRender;
 };
 
@@ -97,20 +55,81 @@ const cardsOnDom = (students) => {
     
     startApp();
 
+
+// TODO delete students-remove from array and add to voldys moldys army
+// TODO card with students name and random house assignment after sort
+// TODO get buttons to work
+// TODO make forms and cards only appear when needed per directions
+// TODO show house cards with listed students and show boldy moldys army
+
+
+
+//  ENTER STUDENT CARD
+
+// FORM ON THE DOM
+const form = document.querySelector('form');
+
+// FORM FUNCTION PUSING TO NEW ARRAY AND ADDING TO DOM
+const createStudent = (e) => {
+  e.preventDefault(); 
+
+  const newStudentObj = {
+    id: students.length + 1,
+    name: document.querySelector("#name").value,
+          }
+
+  students.push(newStudentObj);
+  cardsOnDom(students);
+  form.reset();
+}
+
+// EVENT LISTENER
+form.addEventListener('submit', createStudent);
+
+
+
+
+// HOUSE BUTTONS
+const bnt1 = document.querySelector('#bnt1');
+bnt1.addEventListener('click', function(){
+console.log('button-click')})
+const griffindorBtn =document.querySelector('#griffindor');
+griffindorBtn.addEventListener('click', function(){
+console.log('button-click')})
+const hufflepuffBtn =document.querySelector('#hufflepuff');
+hufflepuffBtn.addEventListener('click', function(){
+console.log('button-click')})
+const ravenclawBtn =document.querySelector('#ravenclaw');
+ravenclawBtn.addEventListener('click', function(){
+console.log('button-click')})
+const slytherinBtn =document.querySelector('#slytherin');
+slytherinBtn.addEventListener('click', function(){
+console.log('button-click')})
+
+
+
+// FUNCTION TO ASSIGN HOUSE TO STUDENTS
+function assignHouse() {
+  const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin'];
+  return houses[Math.floor(Math.random() * houses.length)];
+}
+// HOW TO SHOW HOUSE CARDS WITH STUDENTS LISTED
+
+
     // DELETE STUDENT
 // 1. Target the app div
-const app = document.querySelector("#app");
-app.addEventListener('click', (e) => {
+const army = document.querySelector("#army");
+army.addEventListener('click', (e) => {
   if (e.target.id.includes("delete")) {
     const [, id] = e.target.id.split("--");
-    const index = team.findIndex(e => e.id === Number(id));
-    team.splice(index, 1);
-    cardsOnDom(team);
+    const index = students.findIndex(e => e.id === Number(id));
+    students.splice(index, 1);
+    cardsOnDom(students);
   }
 });
-const startApp = () => {
-  cardsOnDom(team);
+const startArmy = () => {
+  cardsOnDom(students);
  }
 
 
-startApp();
+startArmy();
