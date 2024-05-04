@@ -19,10 +19,14 @@ const students = [{
 ]
 const filter = (array, house) => {
   const houseArray = [];
-
+console.log('array', array)
+console.log('house', house)
   array.forEach((item) => {
-    if (item.favoriteHouse === house) {
+    console.log('item', item)
+    if (item.house === house) {
       houseArray.push(item);
+      console.log('house array', houseArray)
+      studentsOnDom(houseArray, '#army')
     }
   });
 
@@ -89,15 +93,23 @@ bnt1.addEventListener('click', () =>{
 console.log('button-click')})
 const griffindorBtn = document.querySelector('#griffindor');
 griffindorBtn.addEventListener('click', () =>{
+  filter(students, 'Griffindor')
+
 console.log('button-click')})
 const hufflepuffBtn = document.querySelector('#hufflepuff');
 hufflepuffBtn.addEventListener('click', () =>{
+  filter(students, 'Hufflepuff')
+
 console.log('button-click')})
 const ravenclawBtn = document.querySelector('#ravenclaw');
 ravenclawBtn.addEventListener('click', () => {
+  filter(students, 'Ravenclaw')
+
 console.log('button-click')})
 const slytherinBtn = document.querySelector('#slytherin');
 slytherinBtn.addEventListener('click', () =>{
+  filter(students,'Slytherin')
+
 console.log('button-click')})
 
 
