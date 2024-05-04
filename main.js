@@ -70,14 +70,13 @@ const cardsOnDom = (students) => {
 const form = document.querySelector('form');
 
 // FORM FUNCTION PUSHING TO NEW ARRAY AND ADDING TO DOM
-const createMember = (e) => {
+const createStudent = (e) => {
   e.preventDefault(); 
 
   const createStudent = {
     id: students.length + 1,
     name: document.querySelector("#name").value,
-    house: document.querySelector("house").value
-    
+        
   }
 
   students.push(createStudent);
