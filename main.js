@@ -52,7 +52,21 @@ const studentsOnDom = (students) => {
       }
       renderToDom("#army", domString);
     };
-   
+    const expelledOnDom = (expelledStudents) => {
+      let domString = "";
+      for (const student of expelledStudents) {
+        console.log (student)
+        domString += `<div class="card" style="width: 18rem;">
+           <div class="card-body">
+          <p class="card-text">${student.name}</p>
+          <p class="card-text">${student.house}</p>
+          <button class="btn btn-danger" id="expelled--${student.id}">Expelled</button>
+        </div>
+      </div>`;
+          }
+          renderToDom("#expelled", domString);
+        };
+    
 
 // TODO delete students-remove from array and add to voldys moldys army
 // TODO card with students name and random house assignment after sort
@@ -158,16 +172,15 @@ app.addEventListener('click', (e) => {
     const index = students.findIndex(e => e.id === Number(id));
 const expelledStudents = [];
     let estudents = students.splice(index, 1)[0];
-    expelledStudents.house = "expelled";
+    estudents.house = "expelled";
     expelledStudents.push(estudents);
     studentsOnDom(students);
+    expelledOnDom(expelledStudents);
   }
 });
 
 const startApp = () => {
   studentsOnDom(students);
 }
-// const filtered = someArray.filter(obj => obj.name !== "Kristian")
-// const newArray = someArray.map(obj => obj.name === "Kristian")
 
 startApp();
