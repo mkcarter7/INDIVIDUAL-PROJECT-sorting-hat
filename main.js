@@ -85,28 +85,28 @@ form.addEventListener('submit', createStudent);
 
 // HOUSE BUTTONS
 const bnt1 = document.querySelector('#bnt1');
-bnt1.addEventListener('click', function(){
+bnt1.addEventListener('click', () =>{
 console.log('button-click')})
 const griffindorBtn = document.querySelector('#griffindor');
-griffindorBtn.addEventListener('click', function(){
+griffindorBtn.addEventListener('click', () =>{
 console.log('button-click')})
 const hufflepuffBtn = document.querySelector('#hufflepuff');
-hufflepuffBtn.addEventListener('click', function(){
+hufflepuffBtn.addEventListener('click', () =>{
 console.log('button-click')})
 const ravenclawBtn = document.querySelector('#ravenclaw');
-ravenclawBtn.addEventListener('click', function(){
+ravenclawBtn.addEventListener('click', () => {
 console.log('button-click')})
 const slytherinBtn = document.querySelector('#slytherin');
-slytherinBtn.addEventListener('click', function(){
+slytherinBtn.addEventListener('click', () =>{
 console.log('button-click')})
 
 
 
 // FUNCTION TO ASSIGN HOUSE TO STUDENTS
-function assignHouse() {
+
   const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw','Slytherin'];
-  return houses[Math.floor(Math.random() * houses.length)];
-}
+  const assignHouse = Math.floor(Math.random() * houses.length)
+
 const filterHouse = (array, houseString) => {
   const houseArray = [];
 
@@ -125,12 +125,12 @@ const filterHouse = (array, houseString) => {
   return houseArray;
 };
 
-const showHouses = document.querySelector("#submit");
+const showHouses = document.querySelector("#bnt1");
 
 
 showHouses.addEventListener("click", () => {
   const showHouses = filter(students, "house");
-  studentsOnDom(house);
+  studentsOnDom(houses);
 });
 
     // DELETE STUDENT
