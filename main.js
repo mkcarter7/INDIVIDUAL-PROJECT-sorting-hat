@@ -37,6 +37,7 @@ const renderToDom = (filter, htmlToRender) => {
 const studentsOnDom = (students) => {
   let domString = "";
   for (const student of students) {
+    console.log (student)
     domString += `<div class="card" style="width: 18rem;">
        <div class="card-body">
       <p class="card-text">${student.name}</p>
@@ -65,11 +66,10 @@ const form = document.querySelector('form');
 // FORM FUNCTION PUSHING STUDENT TO NEW ARRAY AND ADDING TO DOM
 const createStudent = (e) => {
   e.preventDefault(); 
-
   const createStudent = {
     id: students.length + 1,
     name: document.querySelector("#name").value,
-            
+       house: houses[assignHouse]
   }
 
   students.push(createStudent);
