@@ -146,8 +146,7 @@ app.addEventListener('click', (e) => {
 
     students.splice(index, 1);
 
-    studentsOnDom(students);
-  }
+      }
 });
 
 const startApp = () => {
