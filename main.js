@@ -46,7 +46,7 @@ const studentsOnDom = (students) => {
        <div class="card-body">
       <p class="card-text">${student.name}</p>
       <p class="card-text">${student.house}</p>
-      <button class="btn btn-danger" id="delete--${student.id}">Delete</button>
+      <button class="btn btn-danger" id="expelled--${student.id}">Expelled</button>
     </div>
   </div>`;
       }
@@ -145,25 +145,29 @@ showHouses.addEventListener("click", () => {
   studentsOnDom(houses);
 });
 
-    // DELETE STUDENT
-const app = document.querySelector("#expelled");
+    // EXPELLED STUDENT
+const app = document.querySelector("#army");
 
 
 app.addEventListener('click', (e) => {
-  
-  if (e.target.id.includes("delete")) {
+  console.log("click")
+
+  if (e.target.id.includes("expelled")) {
     const [, id] = e.target.id.split("--");
 
     const index = students.findIndex(e => e.id === Number(id));
-
-    students.splice(index, 1);
-
-      }
+const expelledStudents = [];
+    let estudents = students.splice(index, 1)[0];
+    expelledStudents.house = "expelled";
+    expelledStudents.push(estudents);
+    studentsOnDom(students);
+  }
 });
 
 const startApp = () => {
   studentsOnDom(students);
 }
-
+// const filtered = someArray.filter(obj => obj.name !== "Kristian")
+// const newArray = someArray.map(obj => obj.name === "Kristian")
 
 startApp();
