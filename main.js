@@ -64,21 +64,22 @@ const cardsOnDom = (students) => {
 
 
 
-//  ENTER STUDENT CARD
 
-// FORM ON THE DOM
+
+// STUDENT CARD FORM ON THE DOM
 const form = document.querySelector('form');
 
-// FORM FUNCTION PUSING TO NEW ARRAY AND ADDING TO DOM
+// FORM FUNCTION PUSHING TO NEW ARRAY AND ADDING TO DOM
 const createStudent = (e) => {
   e.preventDefault(); 
 
-  const newStudentObj = {
+  const createStudent = {
     id: students.length + 1,
     name: document.querySelector("#name").value,
-          }
+        
+  }
 
-  students.push(newStudentObj);
+  students.push(createStudent);
   cardsOnDom(students);
   form.reset();
 }
