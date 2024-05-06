@@ -17,6 +17,9 @@ const students = [{
   house: 'Ravenclaw',
 }
 ]
+
+// THINGS I DON'T KNOW HOW TO DO OR UNDERSTAND *******1. ON THE ENTRY FORM MAKE IT NOT APPEAR UNTIL THE 'SORT HERE' BUTTON IS CLICKED AND HOW CHANGE THIS TO DO SOMETHING INSTEAD OF SHOW UNDEFINED WHEN CLICKED **2.HOW TO GET THE HOUSE CARDS TO LINE UP HORIZONTALLY**3. HOW TO ADD A SORT AND CARD WHERE AN 'ALL STUDNETS' CARD SHOWS**4 HOW TO ADD SORT AND CARD FOR VOLDYS ARMY 
+
 const filter = (array, house) => {
   const houseArray = [];
 console.log('array', array)
@@ -26,7 +29,7 @@ console.log('house', house)
     if (item.house === house) {
       houseArray.push(item);
       console.log('house array', houseArray)
-      studentsOnDom(houseArray, '#army')
+      studentsOnDom(houseArray, '#arm')
     }
   });
 
