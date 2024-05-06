@@ -1,19 +1,19 @@
 // STUDENT CARD ARRAY
 const students = [{
   id: 1,
-  name: 'Hermione',
-  house: 'Slytherin',
+  name: 'Herimione',
+  house: 'Hufflepuff',
 },{
   id: 2,
-  name: 'Hermione',
-  house: 'Slytherin',
+  name: 'Draco',
+  house: 'Griffindor',
 },{
   id: 3,
-  name: 'Hermione',
+  name: 'Ron',
   house: 'Slytherin',
 },{
   id: 4,
-  name: 'Hermione',
+  name: 'Harry',
   house: 'Ravenclaw',
 }
 ]
@@ -67,17 +67,6 @@ const studentsOnDom = (students) => {
           renderToDom("#expelled", domString);
         };
     
-
-// TODO delete students-remove from array and add to voldys moldys army
-// TODO card with students name and random house assignment after sort
-// TODO get buttons to work
-// TODO make forms and cards only appear when needed per directions
-// TODO show house cards with listed students and show boldy moldys army
-
-
-
-
-
 // STUDENT CARD FORM ON THE DOM
 const form = document.querySelector('form');
 
@@ -103,21 +92,22 @@ form.addEventListener('submit', createStudent);
 
 // HOUSE BUTTONS
 const bnt1 = document.querySelector('#bnt1');
-bnt1.addEventListener('click', () =>{
+bnt1.addEventListener('click', () => {
 console.log('button-click')})
+
 const griffindorBtn = document.querySelector('#griffindor');
-griffindorBtn.addEventListener('click', () =>{
-  filter(students, 'Griffindor')
+griffindorBtn.addEventListener('click', () => {
+  filter(students,'Griffindor')
 
 console.log('button-click')})
 const hufflepuffBtn = document.querySelector('#hufflepuff');
-hufflepuffBtn.addEventListener('click', () =>{
-  filter(students, 'Hufflepuff')
+hufflepuffBtn.addEventListener('click', () => {
+  filter(students,'Hufflepuff')
 
 console.log('button-click')})
 const ravenclawBtn = document.querySelector('#ravenclaw');
 ravenclawBtn.addEventListener('click', () => {
-  filter(students, 'Ravenclaw')
+  filter(students,'Ravenclaw')
 
 console.log('button-click')})
 const slytherinBtn = document.querySelector('#slytherin');
